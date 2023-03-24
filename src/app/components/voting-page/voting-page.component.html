@@ -1,0 +1,20 @@
+
+<div class="votingDiv">
+    <span class="headerSpan">
+        <h1><strong> Candidate List </strong></h1>
+    </span><br>
+
+    <mat-card class="example-card">
+        <form [formGroup]="candidateForm" (ngSubmit)="voteFunction()">     
+            <mat-radio-group formControlName="candidateId" id="candidateId" class="formField" [(ngModel)]="selectedCandidate.candidateId">
+                <span id="roleSpan">Select one candidate:</span><br><br>
+                <mat-radio-button value={{candidates[0].candidateId}}> {{candidates[0].candidateName}}</mat-radio-button><br><br>
+                <mat-radio-button value={{candidates[1].candidateId}}> {{candidates[1].candidateName}}</mat-radio-button><br><br>
+                <mat-radio-button value={{candidates[2].candidateId}}> {{candidates[2].candidateName}}</mat-radio-button><br><br>
+                <mat-radio-button value={{candidates[3].candidateId}}> {{candidates[3].candidateName}}</mat-radio-button><br><br>
+            </mat-radio-group> <br>
+            <button color="primary" mat-button mat-raised-button [disabled]="!candidateForm.valid" type="submit">Vote</button>
+        </form>
+    </mat-card>
+</div>
+<hr>

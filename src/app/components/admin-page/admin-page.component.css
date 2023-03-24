@@ -1,0 +1,28 @@
+.row{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-column-gap:2em;
+    grid-row-gap: 30px;
+    
+}
+.example-card{
+    padding: 3%;
+    width: 80%;
+    height: 120%;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+h1{
+    margin-left: 3%;
+    margin-top: 3%;
+    display: inline-block;
+}
+mat-card-title{
+    font-size: xx-large;
+}
+mat-card-content{
+    font-size: x-large;
+}
+.adminPage{
+    height: 890px;
+}

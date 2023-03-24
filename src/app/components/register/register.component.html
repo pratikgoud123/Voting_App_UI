@@ -1,0 +1,68 @@
+<div class="registerDiv">
+    <mat-card class="example-card">
+        <span id="headerSpan">
+            <h1><strong>Registration Form</strong></h1>
+        </span><br><br>
+
+        <div class="formDiv">
+            <form [formGroup]="registrationForm" (ngSubmit)="registerFunction()">
+            
+                <mat-form-field appearance="fill" id="userName" class="formField">
+                    <mat-label >Username</mat-label>
+                    <input  matInput type="text" formControlName="userName" [(ngModel)]="user.userName">
+                    <mat-error  *ngIf="registrationForm.controls['userName'].hasError('required')">
+                        Username is required
+                    </mat-error>
+                    <mat-error  *ngIf="registrationForm.controls['userName'].hasError('minlength')">
+                        Username should have minimum of 3 characters
+                    </mat-error>
+                </mat-form-field>
+            
+                <mat-form-field appearance="fill" id="emailId" class="formField">
+                    <mat-label >Email Id</mat-label>
+                    <input  matInput type="text" formControlName="emailId" [(ngModel)]="user.emailId">
+                    <mat-error  *ngIf="registrationForm.controls['emailId'].hasError('required')">
+                        EmailId is required
+                    </mat-error>
+                    <mat-error  *ngIf="registrationForm.controls['emailId'].hasError('minlength')">
+                        EmailId should have minimum of 3 characters
+                    </mat-error>
+                </mat-form-field><br>
+            
+                <mat-form-field appearance="fill" id="password" class="formField">
+                    <mat-label >Password</mat-label>
+                    <input  matInput type="text" formControlName="password" [(ngModel)]="user.password">
+                    <mat-error  *ngIf="registrationForm.controls['password'].hasError('required')">
+                        Password is required
+                    </mat-error>
+                    <mat-error  *ngIf="registrationForm.controls['password'].hasError('minlength')">
+                        Password should have minimum of 6 characters
+                    </mat-error>
+                </mat-form-field>
+            
+                <mat-form-field appearance="fill" id="phoneNumber" class="formField">
+                    <mat-label >Phone Number</mat-label>
+                    <input  matInput type="text" formControlName="phoneNumber" [(ngModel)]="user.phoneNumber">
+                    <mat-error  *ngIf="registrationForm.controls['phoneNumber'].hasError('required')">
+                        phoneNumber is required
+                    </mat-error>
+                    <mat-error  *ngIf="registrationForm.controls['phoneNumber'].hasError('pattern')">
+                        valid phoneNumber contains 10 digits starting with 7/8/9
+                    </mat-error>
+                </mat-form-field><br>
+            
+                <div class="buttons">
+                    <button mat-raised-button color="accent" id="resetButton" (click)="resetFunction()">Reset</button>
+                    <button mat-raised-button color="accent" type="submit" [disabled]="!registrationForm.valid">Register</button>
+                </div>    
+
+            </form>
+        </div><br><br>
+
+        <span id="alreadyUserSpan">
+            <strong>Already a user ? Please</strong><button mat-button (click)="loginRoutefunc()">login</button>
+        </span>
+
+    </mat-card>
+</div>
+

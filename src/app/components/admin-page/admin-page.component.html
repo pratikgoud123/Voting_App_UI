@@ -1,0 +1,14 @@
+<div class="adminPage">
+    <span id="headerSpan">
+        <h1><strong>Admin Page</strong></h1>
+    </span><br><br>
+    <div class="row">
+        <mat-list role="list" *ngFor="let i of candidates">
+            <mat-card class="example-card">
+                <mat-card-title>{{i.candidateName}}</mat-card-title><br><br>
+                <mat-card-content>Vote count : {{i.voteCounts}}</mat-card-content>     
+            </mat-card>
+    
+        </mat-list>
+    </div>
+</div>

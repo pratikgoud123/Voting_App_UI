@@ -1,0 +1,46 @@
+<div class="loginDiv" >
+    <mat-card class="example-card">
+        <span id="headerSpan">
+            <h1><strong>Login Form</strong></h1>
+        </span><br><br>
+
+        <div class="formDiv">
+            <form [formGroup]="loginForm" (ngSubmit)="loginFunction()">
+            
+                <mat-form-field appearance="fill" id="emailId" class="formField">
+                    <mat-label >Email Id</mat-label>
+                    <input  matInput type="text" formControlName="emailId" [(ngModel)]="user.emailId" >
+                    <mat-error  *ngIf="loginForm.controls['emailId'].hasError('required')">
+                        EmailId is required
+                    </mat-error>
+                </mat-form-field>
+                
+            
+                <mat-form-field appearance="fill" id="password" class="formField">
+                    <mat-label >Password</mat-label>
+                    <input  matInput type="text" formControlName="password" [(ngModel)]="user.password"  [type]="show ? 'text' : 'password'">
+                    <mat-error  *ngIf="loginForm.controls['password'].hasError('required')">
+                        Password is required
+                    </mat-error>
+                </mat-form-field><br>
+                
+            
+                <div class="buttons">
+                    <button mat-raised-button color="accent" id="resetButton" (click)="resetFunction()">Reset</button>
+                    <button mat-raised-button color="accent" type="submit" [disabled]="!loginForm.valid">Submit</button>
+                </div>    
+
+            </form>
+        </div>
+
+        <span class="passwordShowButton">
+            <button mat-button (click)="password()">{{show ? 'Hide' : 'Show'}}</button>
+        </span>
+        
+        <span id="notAnUserSpan">
+            <strong>Dont have an account? Please</strong><button mat-button (click)="registerRoutefunc()">register</button>
+        </span>
+    </mat-card>
+</div>
+
+

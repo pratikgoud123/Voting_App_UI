@@ -1,0 +1,58 @@
+strong{
+    color:dodgerblue
+}
+#roleSpan, mat-radio-button{
+    margin-right: 1em;
+}
+.formField{
+    margin-bottom: 1em;
+}
+.formDiv{
+    width: 35em;
+    border: 1px black;
+    margin-left: 3em;
+}
+#emailId{
+    margin-right: 3em;
+}
+#mobileNumber{
+    width: 99%;
+}
+#role{
+    margin-left: 6em; 
+}
+.buttons{
+    display:flex;
+    justify-content: center;
+}
+#resetButton{
+    position: relative;
+    left: -30px;
+}
+#headerSpan{
+    position: relative;
+    left: 15em;
+}
+.example-card{
+    padding: 30px;
+    width: 600px;
+    position: relative;
+    right: -40em;
+    bottom: -20em;
+    border-radius: 10px;
+}
+.loginDiv{
+    height: 900px;
+    background-position: center center;
+    /* background-size: 100% 100%;     */
+    background-image: url(https://as1.ftcdn.net/v2/jpg/01/21/32/98/1000_F_121329889_kwaDTP3cGxL9gto2JhJ4xMT6v9HVTsa4.jpg)
+
+}
+#notAnUserSpan{
+    margin-left: 10em;
+}
+.passwordShowButton{
+    position: relative;
+    left: 85%;
+    top: -160px;
+}
